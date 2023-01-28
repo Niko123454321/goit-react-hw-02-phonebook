@@ -56,7 +56,7 @@ export class App extends Component {
 
   render() {
     const { addContact, deliteContact } = this;
-    const { contacts, filter } = this.state;
+    const { filter } = this.state;
     const newContacts = this.getFilterContacts();
     return (
       <div
