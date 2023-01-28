@@ -61,7 +61,7 @@ export class App extends Component {
     return (
       <div
         style={{
-          height: '100vh',
+          widows: '150%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
