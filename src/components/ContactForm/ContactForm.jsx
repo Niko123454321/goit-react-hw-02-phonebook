@@ -1,4 +1,3 @@
-import { number } from 'prop-types';
 import { Component } from 'react';
 import css from './contactForm.module.css';
 
