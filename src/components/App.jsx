@@ -61,6 +61,7 @@ export class App extends Component {
     return (
       <div
         style={{
+          margin: '100px',
           widows: '150%',
           display: 'flex',
           flexDirection: 'column',
