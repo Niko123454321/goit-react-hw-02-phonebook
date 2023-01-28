@@ -61,14 +61,10 @@ export class App extends Component {
     return (
       <div
         style={{
-          margin: '100px',
-          widows: '150%',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          fontSize: 50,
-          color: '#010101',
         }}
       >
         <h1>Phonebook</h1>
