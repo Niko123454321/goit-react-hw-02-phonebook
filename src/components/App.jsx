@@ -8,9 +8,6 @@ import ContactForm from './ContactForm/ContactForm';
 export class App extends Component {
   state = {
     contacts: [
-      { id: nanoid(), name: 'Asd', number: '0933333333' },
-      { id: nanoid(), name: 'Sdf', number: '0944444444' },
-      { id: nanoid(), name: 'Dfg', number: '0955555555' },
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
       { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
       { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
@@ -19,7 +16,20 @@ export class App extends Component {
     filter: '',
   };
 
+  isСhecked(name) {
+    const { contacts } = this.state;
+    const normalizName = name.toLowerCase();
+    const result = contacts.find(({ name }) => {
+      return name.toLowerCase() === normalizName;
+    });
+    return Boolean(result);
+  }
+
   addContact = ({ name, number }) => {
+    if (this.isСhecked(name)) {
+      return alert(`${name} is already in your contacts!`);
+    }
+
     this.setState(prevState => {
       const { contacts } = prevState;
       const newContact = {
@@ -69,7 +79,6 @@ export class App extends Component {
       >
         <h1>Phonebook</h1>
         <ContactForm onSubmit={addContact} />
-        {/* {console.log(this.state)} */}
         <h2>Contacts</h2>
         <Filter onInputChange={this.handleFilter} filter={filter} />
         <ContactList contacts={newContacts} deliteContact={deliteContact} />

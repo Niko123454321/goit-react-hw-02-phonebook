@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const Filter = ({ onInputChange, filter }) => {
   return (
     <>
@@ -13,3 +14,8 @@ const Filter = ({ onInputChange, filter }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  onInputChange: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+};
